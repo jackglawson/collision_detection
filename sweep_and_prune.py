@@ -24,4 +24,5 @@ def sweep_and_prune(bounds: List[Tuple]) -> List[List]:
     return collisions
 
 
-print(sweep_and_prune([(0, 5), (1, 2), (3, 4)]))
+if __name__ == "__main__":
+    print(sweep_and_prune([(0, 5), (1, 2), (3, 4)]))
