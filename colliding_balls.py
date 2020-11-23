@@ -23,8 +23,8 @@ def potentially_colliding(balls: List[Ball]):
     z_bounds = [(b.z - b.radius, b.z + b.radius) for b in balls]
 
     x_collisions = sweep_and_prune(x_bounds)
-    y_collisions = sweep_and_prune(x_bounds)
-    z_collisions = sweep_and_prune(x_bounds)
+    y_collisions = sweep_and_prune(y_bounds)
+    z_collisions = sweep_and_prune(z_bounds)
 
     potentially_colliding_pairs = []
     for i in range(len(balls)):
