@@ -27,6 +27,7 @@ def potentially_colliding(balls: List[Ball]):
     z_collisions = sweep_and_prune(z_bounds)
 
     potentially_colliding_pairs = []
+    # This can be optimised
     for i in range(len(balls)):
         for j in range(i+1, len(balls)):
             if x_collisions[i][j] and y_collisions[i][j] and z_collisions[i][j]:
@@ -38,7 +39,7 @@ def potentially_colliding(balls: List[Ball]):
 def check_collision(ball1: Ball, ball2: Ball) -> bool:
     """Check if two balls actually collide"""
     d = sqrt((ball1.x - ball2.x)**2 + (ball1.y - ball2.y)**2 + (ball1.z - ball2.z)**2)
-    return True if d < (ball1.radius + ball2.radius) else False
+    return d < (ball1.radius + ball2.radius)
 
 
 def colliding(balls: List[Ball]):
